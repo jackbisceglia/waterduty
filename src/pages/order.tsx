@@ -31,8 +31,6 @@ const ListOrder = ({ list }: { list: OrderType[] | undefined }) => {
 
   const [onDutyToday, onDutyTomorrow] = data || [];
 
-  console.log("On Duty Today: ", onDutyToday);
-
   if (isLoading) {
     return <p>Loading...</p>;
   }
@@ -68,11 +66,14 @@ const Modal = ({ show, setShow, list }: ModalPropTypes) => {
         action=""
       >
         <p className="text-white text-lg font-semibold py-2">
-          Edit Today's Duty
+          Edit On Duty Today
         </p>
         <div>
           {list.map(({ _id, name, position }) => (
-            <div className="w-1/ py-2 flex justify-start w-full">
+            <div
+              key={_id?.toString()}
+              className="w-1/ py-2 flex justify-start w-full"
+            >
               <input
                 name="radio"
                 type="radio"

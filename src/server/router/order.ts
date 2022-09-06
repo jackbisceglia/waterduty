@@ -13,7 +13,7 @@ let collection: mongoDB.Collection;
 const getList = async () => await collection.find().toArray();
 
 const parseDate = (str: string) => {
-  var [month, day, year] = str.split("/").map((num) => parseInt(num));
+  const [month, day, year] = str.split("/").map((num) => parseInt(num));
 
   if (!month || !day || !year) {
     return new Date();

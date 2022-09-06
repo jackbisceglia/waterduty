@@ -11,14 +11,6 @@ const Home: NextPage = () => {
   const [onDutyToday, onDutyTomorrow] = data || [];
   console.log("On Duty Today: ", onDutyToday);
 
-  const getServerState = () => {
-    if (isLoading) {
-      return "Loading...";
-    } else if (isError) {
-      return "Error";
-    }
-  };
-
   const dateToday = new Date().toLocaleDateString("en-us", {
     weekday: "long",
     year: "numeric",
